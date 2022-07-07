@@ -60,7 +60,7 @@ for (let i = 0; i < imageList.length; i++){
     // CREO L'ELEMENTO FIGURE COMPOSTO DA IMMAGINE E TESTO
     let figure = `<div class="figure"><img src="${imageList[i].url}"><div class="description"><h2>${imageList[i].title}</h2><p>${imageList[i].description}</p></div></div>`
 
-    // STAMPO UN IMMAGINE DIVERSA AD OGNI CICLO
+    // STAMPO UN L'ELEMENTO FIGURE NEL DOM
     gallery.innerHTML += figure;
 
     // STAMPO COLONNE E IMMAGINI NELA ROW

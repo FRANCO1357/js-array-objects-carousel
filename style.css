@@ -25,12 +25,17 @@
     position: relative;
 }
 
-#gallery img{
+#gallery .figure{
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.figure img{
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 20px;
-    display: none;
 }
 
 #gallery .active{

@@ -7,7 +7,6 @@
 
 // RECUPERO LA GALLERY
 const gallery = document.getElementById("gallery");
-const descriptionElement = document.querySelector('.description');
 
 // RECUPERO LA ROW
 const row = document.getElementById('row');
@@ -58,28 +57,22 @@ let imgNumber = 0;
 // CICLO FOR PER CREARE LE IMMAGINI
 for (let i = 0; i < imageList.length; i++){
 
-    // CREO L'ELEMENTO IMMAHINE
-    let images = `<img src="${imageList[i].url}">`;
-    let title = `<h2>${imageList[i].title}</h2>`
-    let description = `<p>${imageList[i].description}</p>`
-
-    description
-
-    descriptionElement.innerHTML += title + description;
+    // CREO L'ELEMENTO FIGURE COMPOSTO DA IMMAGINE E TESTO
+    let figure = `<div class="figure"><img src="${imageList[i].url}"><div class="description"><h2>${imageList[i].title}</h2><p>${imageList[i].description}</p></div></div>`
 
     // STAMPO UN IMMAGINE DIVERSA AD OGNI CICLO
-    gallery.innerHTML += images;
+    gallery.innerHTML += figure;
 
     // STAMPO COLONNE E IMMAGINI NELA ROW
     let col = `<div class="col"><img src="${imageList[i].url}"></div>`;
     row.innerHTML += col;
 }
 
-
+console.log(imgNumber);
 
 
 // SELEZIONO I TAG IMG DEL CAROSELLO E DO AL PRIMO LA CLASSE ACTIVE
-const currentImg = document.querySelectorAll('#gallery img');
+const currentImg = document.querySelectorAll('#gallery .figure');
 currentImg[imgNumber].classList.add('active');
 
 // SELEZIONO I TAG IMG DEL TUMBNAIL E DO AL PRIMO LA CLASSE ACTIVE

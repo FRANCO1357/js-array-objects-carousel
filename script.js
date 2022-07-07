@@ -6,17 +6,17 @@
 // Al click dell'utente sulle frecce, l'immagine attiva cambia e diventa visibile nello slider, prendendo il posto della precedente.
 
 // RECUPERO LA GALLERY
-const gallery = document.getElementById("gallery")
+const gallery = document.getElementById("gallery");
+const descriptionElement = document.querySelector('.description');
 
 // RECUPERO LA ROW
-const row = document.getElementById('row')
+const row = document.getElementById('row');
 
 // RECUPERO I PULSANTI
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 
 // RECUPERO LA LISTA DI IMMAGINI
-// const imageList = ['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg'];
 const imageList = [
     {
       url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -60,6 +60,12 @@ for (let i = 0; i < imageList.length; i++){
 
     // CREO L'ELEMENTO IMMAHINE
     let images = `<img src="${imageList[i].url}">`;
+    let title = `<h2>${imageList[i].title}</h2>`
+    let description = `<p>${imageList[i].description}</p>`
+
+    description
+
+    descriptionElement.innerHTML += title + description;
 
     // STAMPO UN IMMAGINE DIVERSA AD OGNI CICLO
     gallery.innerHTML += images;
@@ -68,6 +74,9 @@ for (let i = 0; i < imageList.length; i++){
     let col = `<div class="col"><img src="${imageList[i].url}"></div>`;
     row.innerHTML += col;
 }
+
+
+
 
 // SELEZIONO I TAG IMG DEL CAROSELLO E DO AL PRIMO LA CLASSE ACTIVE
 const currentImg = document.querySelectorAll('#gallery img');
